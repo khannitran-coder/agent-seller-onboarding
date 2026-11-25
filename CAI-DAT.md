@@ -18,7 +18,7 @@ Repo này có nội dung hợp đồng và quy định nội bộ, nên để **
 | Hướng dẫn nhân viên và sự cố | [SOP](docs/07-sop-nhan-vien.md), [xử lý sự cố](docs/09-xu-ly-su-co.md) |
 | Mã nguồn để sửa | `plugin/`, `skills/`, `project/`, `kb-workspace/`, `tools/` |
 
-Không có trong repo: phiếu duyệt KU (có thông tin người duyệt). Chuyển riêng qua kênh nội bộ; cần tệp này để sinh lại `project/kb/` khi KU thay đổi.
+Phiếu duyệt KU đang dùng: `phe-duyet-ku-pilot-2026-11-25-r2.csv` ở gốc repo, ghi vai trò người duyệt, không ghi tên cá nhân. Đưa vào repo này theo quyết định của người dùng ngày 25/11/2026, là ngoại lệ so với quy tắc lưu nội bộ; phiếu có tên người duyệt thì không commit. Sinh lại gói tri thức: `python tools/export_kb.py --approvals phe-duyet-ku-pilot-2026-11-25-r2.csv`.
 
 ## Bước 1. Bật tính năng
 
