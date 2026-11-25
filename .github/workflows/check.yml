@@ -1,0 +1,38 @@
+name: Kiểm tra gói Skill
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install openpyxl pillow pypdf
+      - run: python tools/build_skills.py --check
+      - run: python -m unittest discover -s tests/plugin -v
+      - name: So kết quả fixture với expected JSON
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+          cases = [
+              ('price-old', ['skills/affiliate-price-review/scripts/review_price.py', 'tests/fixtures/bang-gia-sim.xlsx', '--map', 'tests/fixtures/sim-map.json'], 2),
+              ('price-real', ['skills/affiliate-price-review/scripts/review_price.py', 'tests/fixtures/bang-gia-mau-that-sim.xlsx'], 2),
+              ('tracker-errors', ['skills/daily-operations-report/scripts/tracker_report.py', 'tests/fixtures/tracker-sim.csv', '--as-of', '2026-11-16T17:00:00+07:00'], 2),
+              ('tracker-clean', ['skills/daily-operations-report/scripts/tracker_report.py', 'tests/fixtures/tracker-clean-sim.csv', '--as-of', '2026-11-16T17:00:00+07:00'], 0),
+          ]
+          for name, args, code in cases:
+              result = subprocess.run(['python', *args], capture_output=True, text=True)
+              assert result.returncode == code, f'{name}: sai exit code'
+              expected = json.loads(Path(f'tests/fixtures/expected/{name}.json').read_text())
+              assert json.loads(result.stdout) == expected, f'{name}: khác expected'
+              print(f'{name}: ĐẠT')
+          PY

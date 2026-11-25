@@ -1,0 +1,7 @@
+{
+  "author": "PM - TKC",
+  "note": "Chỉ chuỗi mô phỏng để kiểm phát hiện, không có thông tin đăng nhập/PII thật; miễn quét số dài duy nhất cho fixture liệt kê, không miễn các quy tắc khác.",
+  "synthetic_red_fixtures": [
+    "tests/fixtures/tracker-sim.csv"
+  ]
+}

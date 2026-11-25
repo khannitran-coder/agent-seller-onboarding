@@ -1,0 +1,13 @@
+{
+  "sheet": "Bang_Gia",
+  "required": ["stt", "product", "market", "member", "affiliate", "status", "notes", "seller", "basis"],
+  "columns": {
+    "stt": ["STT"], "product": ["Sản phẩm"],
+    "market": ["Giá thị trường"], "member": ["Giá hội viên"],
+    "seller": ["% nhà bán"], "affiliate": ["% Affiliate"],
+    "basis": ["Cơ sở tính"], "status": ["Trạng thái"], "notes": ["Ghi chú"]
+  },
+  "sample_markers": ["DÒNG VÍ DỤ SIM"],
+  "check_ok": ["ĐÚNG", "ĐỦ 100%"],
+  "check_bad": ["KHÔNG ĐỦ 100%", "LỆCH"]
+}

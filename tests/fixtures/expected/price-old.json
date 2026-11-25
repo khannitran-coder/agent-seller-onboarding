@@ -1,0 +1,75 @@
+{
+  "tổng kết": "Không đạt",
+  "lỗi": [
+    {
+      "STT": 2,
+      "sản phẩm": "dòng 2",
+      "quy tắc vi phạm": "PR-01",
+      "giá trị": "Trạng thái khác ĐÚNG",
+      "đề xuất người kiểm": "Đối chiếu nguồn, không tự sửa"
+    },
+    {
+      "STT": 4,
+      "sản phẩm": "dòng 4",
+      "quy tắc vi phạm": "PR-02",
+      "giá trị": "Tổng tỷ lệ không đủ 100% hoặc không phải số",
+      "đề xuất người kiểm": "Đối chiếu nguồn, không tự sửa"
+    },
+    {
+      "STT": 5,
+      "sản phẩm": "dòng 5",
+      "quy tắc vi phạm": "PR-03",
+      "giá trị": "Cơ sở tính không phải GIÁ HỘI VIÊN",
+      "đề xuất người kiểm": "Đối chiếu nguồn, không tự sửa"
+    },
+    {
+      "STT": 6,
+      "sản phẩm": "dòng 6",
+      "quy tắc vi phạm": "PR-04",
+      "giá trị": "Giá hội viên không thấp hơn giá thị trường",
+      "đề xuất người kiểm": "Đối chiếu nguồn, không tự sửa"
+    },
+    {
+      "STT": 7,
+      "sản phẩm": "dòng 7",
+      "quy tắc vi phạm": "PR-05",
+      "giá trị": "Còn câu/dòng ví dụ của mẫu",
+      "đề xuất người kiểm": "Đối chiếu nguồn, không tự sửa"
+    },
+    {
+      "STT": 8,
+      "sản phẩm": "dòng 8",
+      "quy tắc vi phạm": "PR-06",
+      "giá trị": "Ô giá không phải số",
+      "đề xuất người kiểm": "Đối chiếu nguồn, không tự sửa"
+    }
+  ],
+  "chưa xác minh": [],
+  "đối chiếu công thức": [
+    {
+      "dòng": 2,
+      "công thức (dữ liệu, không thực thi)": "cần người đối chiếu công thức"
+    },
+    {
+      "dòng": 3,
+      "công thức (dữ liệu, không thực thi)": "cần người đối chiếu công thức"
+    },
+    {
+      "dòng": 5,
+      "công thức (dữ liệu, không thực thi)": "cần người đối chiếu công thức"
+    },
+    {
+      "dòng": 6,
+      "công thức (dữ liệu, không thực thi)": "cần người đối chiếu công thức"
+    },
+    {
+      "dòng": 7,
+      "công thức (dữ liệu, không thực thi)": "cần người đối chiếu công thức"
+    },
+    {
+      "dòng": 8,
+      "công thức (dữ liệu, không thực thi)": "cần người đối chiếu công thức"
+    }
+  ],
+  "lưu ý": "[CHỜ COO DUYỆT – D-04]; xác nhận mẫu/cache/quy tắc, không phải phê duyệt nghiệp vụ"
+}

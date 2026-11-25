@@ -1,0 +1,102 @@
+{
+  "thời điểm chốt": "2026-11-16T17:00:00+07:00",
+  "lỗi dữ liệu": [],
+  "số liệu": {
+    "số dòng đọc": 3,
+    "số dòng hợp lệ": 3,
+    "số dòng loại khỏi số liệu": 0,
+    "status": {
+      "MỚI": 1,
+      "ĐANG XÁC MINH": 0,
+      "CHỜ BỔ SUNG": 1,
+      "CHỜ PHÊ DUYỆT": 0,
+      "ĐƯỢC DUYỆT": 0,
+      "CHỜ SẢN PHẨM": 0,
+      "SẴN SÀNG BÁN": 1,
+      "TẠM DỪNG/TỪ CHỐI": 0,
+      "chưa ghi": 0
+    },
+    "shop_status": {
+      "chưa xác minh": 0,
+      "đã gửi đăng ký": 2,
+      "được kích hoạt": 1,
+      "tạm dừng": 0,
+      "chưa ghi": 0
+    },
+    "product_status": {
+      "chưa xác minh": 0,
+      "chưa có": 2,
+      "chờ duyệt": 0,
+      "hiển thị": 1,
+      "không hiển thị": 0,
+      "chưa ghi": 0
+    },
+    "ready_status": {
+      "chưa xác minh": 0,
+      "chưa sẵn sàng": 2,
+      "chờ Trưởng nhóm xác nhận": 0,
+      "sẵn sàng bán": 1,
+      "chưa ghi": 0
+    },
+    "quá hạn": 2,
+    "tuổi hồ sơ (ngày)": [
+      {
+        "merchant_id": "SIM-001",
+        "tuổi hồ sơ (ngày)": 2.0
+      },
+      {
+        "merchant_id": "SIM-021",
+        "tuổi hồ sơ (ngày)": 1.0
+      },
+      {
+        "merchant_id": "SIM-022",
+        "tuổi hồ sơ (ngày)": 0.5
+      }
+    ],
+    "phản hồi đầu (giờ)": {
+      "số hồ sơ có mốc": 2,
+      "trung bình": 3.0,
+      "trung vị": 3.0
+    },
+    "handling_minutes": {
+      "số hồ sơ có số phút": 3,
+      "tổng": 60.0,
+      "trung bình": 20.0
+    },
+    "review_result trên ai_used=true": {
+      "mẫu số": 2,
+      "số lượng": {
+        "duyệt nguyên": 1,
+        "sửa nhỏ": 1,
+        "sửa lớn": 0,
+        "bỏ": 0
+      },
+      "tỷ lệ": {
+        "duyệt nguyên": 0.5,
+        "sửa nhỏ": 0.5,
+        "sửa lớn": 0.0,
+        "bỏ": 0.0
+      },
+      "chưa ghi": 0
+    }
+  },
+  "danh sách quá hạn": [
+    {
+      "merchant_id": "SIM-001",
+      "owner_role": "NV-01",
+      "status": "MỚI",
+      "tuổi hồ sơ (ngày)": 2.0,
+      "next_action": "Người kiểm hồ sơ",
+      "next_due_at": "2026-11-15T17:00:00+07:00"
+    },
+    {
+      "merchant_id": "SIM-021",
+      "owner_role": "NV-01",
+      "status": "CHỜ BỔ SUNG",
+      "tuổi hồ sơ (ngày)": 1.0,
+      "next_action": "Người kiểm hồ sơ",
+      "next_due_at": "2026-11-16T16:00:00+07:00"
+    }
+  ],
+  "phạm vi": "Chỉ tính dòng hợp lệ; loại cả hai dòng trùng. Không phải SLA giờ làm việc. Dữ liệu Đỏ: chỉ báo dòng/cột, không giá trị."
+}

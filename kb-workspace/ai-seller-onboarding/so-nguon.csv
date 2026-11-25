@@ -1,0 +1,13 @@
+source_id,tai_lieu,trang_thai_nguon,nguoi_xac_nhan,ngay_xac_nhan,ghi_chu
+SIM-SRC-001,VĂN MỞ SHOP.docx,APPROVED,người thiết kế agent,2026-11-25,
+SIM-SRC-002,61e9c3c2dec45e9a07d5.jpg (tờ rơi mở shop),APPROVED,người thiết kế agent,2026-11-25,Câu “0 phí trung gian” còn mâu thuẫn CF-06
+SIM-SRC-003,MC. Mẫu Hợp đồng hợp tác 11.11.2026.docx,APPROVED,người thiết kế agent,2026-11-25,Khối thông tin các bên không đưa vào KU; còn CF-01 CF-04 CF-05 CF-06
+SIM-SRC-004,Phụ lục Affiliate Hi1 11.11.2026.docx,APPROVED,người thiết kế agent,2026-11-25,Khối thông tin các bên và chữ ký không đưa vào KU; còn CF-01 CF-02 CF-03
+SIM-SRC-005,PL GIÁ BÁN CÓ AFFILIATE.xlsx,APPROVED,người thiết kế agent,2026-11-25,Còn CF-03
+SIM-SRC-006,VTP.pdf,KHONG_DUNG,,,Người dùng loại khỏi kho
+SIM-SRC-007,Ủy quyền KTA scan.pdf,KHONG_DUNG,,,Người dùng loại khỏi kho
+SIM-SRC-008,GIAO DIỆN APP.jpg,APPROVED,người thiết kế agent,2026-11-25,Chỉ dùng đối chiếu KU 001:c0019
+SIM-SRC-009,Hướng Dẫn Tải APP.jpg,APPROVED,người thiết kế agent,2026-11-25,Không nạp ảnh gốc vào Claude vì hiển thị thông tin đăng nhập
+SIM-SRC-010,Voucher.jfif,APPROVED,người thiết kế agent,2026-11-25,Ưu đãi cho khách hàng; ngoài phạm vi agent nhà bán
+SIM-SRC-011,SỔ TAY NHÀ BÁN.pdf,APPROVED,người thiết kế agent,2026-11-25,Còn CF-04 CF-05
+SIM-SRC-012,Kính gửi Quý Nhà bán.docx,APPROVED,người thiết kế agent,2026-11-25,

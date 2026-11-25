@@ -1,0 +1,160 @@
+{
+  "thời điểm chốt": "2026-11-16T17:00:00+07:00",
+  "lỗi dữ liệu": [
+    {
+      "dòng": 4,
+      "cột": "merchant_id",
+      "lỗi": "Thiếu giá trị bắt buộc"
+    },
+    {
+      "dòng": 5,
+      "cột": "merchant_id",
+      "lỗi": "Mã hồ sơ trùng"
+    },
+    {
+      "dòng": 6,
+      "cột": "merchant_id",
+      "lỗi": "Mã hồ sơ trùng"
+    },
+    {
+      "dòng": 7,
+      "cột": "status",
+      "lỗi": "Ngoài enum"
+    },
+    {
+      "dòng": 8,
+      "cột": "status_updated_at",
+      "lỗi": "Thời gian sai ISO 8601 hoặc thiếu múi giờ"
+    },
+    {
+      "dòng": 9,
+      "cột": "created_at",
+      "lỗi": "Sau thời điểm chốt"
+    },
+    {
+      "dòng": 10,
+      "cột": "first_contact_at",
+      "lỗi": "Trước thời điểm nhận lead"
+    },
+    {
+      "dòng": 11,
+      "cột": "product_status",
+      "lỗi": "Không đủ điều kiện sẵn sàng bán"
+    },
+    {
+      "dòng": 11,
+      "cột": "shop_status",
+      "lỗi": "Không đủ điều kiện sẵn sàng bán"
+    },
+    {
+      "dòng": 12,
+      "cột": "next_action",
+      "lỗi": "Nghi dữ liệu Đỏ"
+    },
+    {
+      "dòng": 13,
+      "cột": "last_action",
+      "lỗi": "Nghi dữ liệu Đỏ"
+    },
+    {
+      "dòng": 14,
+      "cột": "created_at",
+      "lỗi": "Thiếu giá trị bắt buộc"
+    },
+    {
+      "dòng": 15,
+      "cột": "handling_minutes",
+      "lỗi": "Phải là số hữu hạn không âm"
+    }
+  ],
+  "số liệu": {
+    "số dòng đọc": 15,
+    "số dòng hợp lệ": 3,
+    "số dòng loại khỏi số liệu": 12,
+    "status": {
+      "MỚI": 1,
+      "ĐANG XÁC MINH": 0,
+      "CHỜ BỔ SUNG": 0,
+      "CHỜ PHÊ DUYỆT": 0,
+      "ĐƯỢC DUYỆT": 0,
+      "CHỜ SẢN PHẨM": 0,
+      "SẴN SÀNG BÁN": 1,
+      "TẠM DỪNG/TỪ CHỐI": 1,
+      "chưa ghi": 0
+    },
+    "shop_status": {
+      "chưa xác minh": 0,
+      "đã gửi đăng ký": 2,
+      "được kích hoạt": 1,
+      "tạm dừng": 0,
+      "chưa ghi": 0
+    },
+    "product_status": {
+      "chưa xác minh": 0,
+      "chưa có": 2,
+      "chờ duyệt": 0,
+      "hiển thị": 1,
+      "không hiển thị": 0,
+      "chưa ghi": 0
+    },
+    "ready_status": {
+      "chưa xác minh": 0,
+      "chưa sẵn sàng": 2,
+      "chờ Trưởng nhóm xác nhận": 0,
+      "sẵn sàng bán": 1,
+      "chưa ghi": 0
+    },
+    "quá hạn": 1,
+    "tuổi hồ sơ (ngày)": [
+      {
+        "merchant_id": "SIM-001",
+        "tuổi hồ sơ (ngày)": 2.0
+      },
+      {
+        "merchant_id": "SIM-002",
+        "tuổi hồ sơ (ngày)": 2.0
+      },
+      {
+        "merchant_id": "SIM-015",
+        "tuổi hồ sơ (ngày)": 2.0
+      }
+    ],
+    "phản hồi đầu (giờ)": {
+      "số hồ sơ có mốc": 1,
+      "trung bình": 2.0,
+      "trung vị": 2.0
+    },
+    "handling_minutes": {
+      "số hồ sơ có số phút": 3,
+      "tổng": 30.0,
+      "trung bình": 10.0
+    },
+    "review_result trên ai_used=true": {
+      "mẫu số": 1,
+      "số lượng": {
+        "duyệt nguyên": 1,
+        "sửa nhỏ": 0,
+        "sửa lớn": 0,
+        "bỏ": 0
+      },
+      "tỷ lệ": {
+        "duyệt nguyên": 1.0,
+        "sửa nhỏ": 0.0,
+        "sửa lớn": 0.0,
+        "bỏ": 0.0
+      },
+      "chưa ghi": 0
+    }
+  },
+  "danh sách quá hạn": [
+    {
+      "merchant_id": "SIM-001",
+      "owner_role": "NV-01",
+      "status": "MỚI",
+      "tuổi hồ sơ (ngày)": 2.0,
+      "next_action": "Người kiểm hồ sơ",
+      "next_due_at": "2026-11-15T17:00:00+07:00"
+    }
+  ],
+  "phạm vi": "Chỉ tính dòng hợp lệ; loại cả hai dòng trùng. Không phải SLA giờ làm việc. Dữ liệu Đỏ: chỉ báo dòng/cột, không giá trị."
+}

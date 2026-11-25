@@ -1,0 +1,19 @@
+{
+  "sheet": "Bang_Nhap_Affiliate",
+  "required": ["stt", "product", "brand", "market", "member", "affiliate", "status", "notes"],
+  "columns": {
+    "stt": ["STT"],
+    "product": ["tên sản phẩm", "sản phẩm"],
+    "brand": ["thương hiệu"],
+    "market": ["giá thị trường"],
+    "member": ["giá bán hội viên", "giá hội viên"],
+    "affiliate": ["% chiết khấu Affiliate", "% Affiliate"],
+    "status": ["Trạng thái"],
+    "notes": ["Ghi chú"],
+    "seller": ["% nhà bán"],
+    "basis": ["Cơ sở tính"]
+  },
+  "sample_markers": ["DÒNG VÍ DỤ SIM"],
+  "check_ok": ["ĐÚNG", "ĐỦ 100%"],
+  "check_bad": ["KHÔNG ĐỦ 100%", "LỆCH"]
+}

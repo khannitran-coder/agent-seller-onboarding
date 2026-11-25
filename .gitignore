@@ -1,0 +1,6 @@
+dist/
+__pycache__/
+*.pyc
+# Tệp phê duyệt KU có tên người duyệt: lưu nội bộ, chỉ giữ mẫu templates/phe-duyet-ku.csv
+phe-duyet-*.csv
+!templates/phe-duyet-ku.csv

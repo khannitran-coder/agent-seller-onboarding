@@ -1,0 +1,16 @@
+merchant_id,source_channel,created_at,first_contact_at,seller_type,product_category,owner_role,status,status_updated_at,shop_status,product_status,ready_status,missing_items,checklist_version,contact_status,last_action,next_action,next_due_at,approval_evidence,risk_flags,escalation_to,ai_used,skill_version,reviewer,review_result,handling_minutes
+SIM-001,,2026-11-14T17:00:00+07:00,2026-11-14T19:00:00+07:00,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,2026-11-15T17:00:00+07:00,,,,true,,,duyệt nguyên,10
+SIM-002,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,SẴN SÀNG BÁN,,được kích hoạt,hiển thị,sẵn sàng bán,,,,,Người kiểm hồ sơ,2026-11-15T17:00:00+07:00,,,,false,,,,10
+,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-004,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-004,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-006,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,SAI ENUM,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-007,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,KHONG PHAI NGAY,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-008,,2026-11-17T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-009,,2026-11-14T17:00:00+07:00,2026-11-13T17:00:00+07:00,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-010,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,sẵn sàng bán,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-011,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,000000000,,,,,false,,,,10
+SIM-012,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,OTP: 42,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-013,,,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,10
+SIM-014,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,MỚI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,,,,,false,,,,KHONG PHAI SO
+SIM-015,,2026-11-14T17:00:00+07:00,,doanh nghiệp,,NV-01,TẠM DỪNG/TỪ CHỐI,,đã gửi đăng ký,chưa có,chưa sẵn sàng,,,,,Người kiểm hồ sơ,2026-11-15T17:00:00+07:00,,,,false,,,,10

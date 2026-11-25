@@ -1,0 +1,8 @@
+{
+  "affiliate-price-review": "Kiểm bảng giá Affiliate (Excel đã che dữ liệu), báo lỗi theo quy tắc PR. Dùng khi “kiểm bảng giá”, “soát chiết khấu”. Chỉ đọc, không sửa tệp, không phê duyệt giá.",
+  "daily-operations-report": "Đọc tracker chỉ đọc, tổng hợp báo cáo cuối ngày, hồ sơ tồn/quá hạn và phiếu chuyển cấp. Dùng khi “báo cáo cuối ngày”, “chốt ca”. Không sửa Sheet, không tự gửi.",
+  "first-product-assistant": "Nháp sản phẩm đầu tiên, kiểm trường thiếu và claim cần chứng cứ. Dùng khi “đăng sản phẩm”, “viết mô tả”, “SKU”, “OCOP”. Không tự đăng, không sửa giá hay xuất xứ.",
+  "seller-communication": "Soạn nháp tin gửi nhà bán theo mẫu A–I. Dùng khi “soạn tin”, “nhắc bổ sung”, “tin chào mừng”, “báo đã duyệt”. Không tự gửi, không hứa ngày duyệt, không xin OTP.",
+  "seller-document-checklist": "Đối chiếu chứng từ nhà bán với checklist, lập bảng Đủ/Thiếu/Cần xác minh. Dùng khi “kiểm hồ sơ”, “thiếu giấy tờ gì”. Không kết luận pháp lý, không tự duyệt.",
+  "seller-media-tools": "Làm bản sao ảnh vuông và gộp PDF đúng thứ tự. Dùng khi “ảnh vuông”, “nền trắng”, “gộp PDF”. Không dùng cho giấy tờ tuỳ thân hay sao kê, không ghi đè bản gốc."
+}

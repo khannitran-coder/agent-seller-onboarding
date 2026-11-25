@@ -1,0 +1,1 @@
+merchant_id,source_channel,created_at,first_contact_at,seller_type,product_category,owner_role,status,status_updated_at,shop_status,product_status,ready_status,missing_items,checklist_version,contact_status,last_action,next_action,next_due_at,approval_evidence,risk_flags,escalation_to,ai_used,skill_version,reviewer,review_result,handling_minutes

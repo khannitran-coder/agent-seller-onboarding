@@ -1,0 +1,131 @@
+{
+  "version": "0.2.1",
+  "columns": [
+    "merchant_id",
+    "source_channel",
+    "created_at",
+    "first_contact_at",
+    "seller_type",
+    "product_category",
+    "owner_role",
+    "status",
+    "status_updated_at",
+    "shop_status",
+    "product_status",
+    "ready_status",
+    "missing_items",
+    "checklist_version",
+    "contact_status",
+    "last_action",
+    "next_action",
+    "next_due_at",
+    "approval_evidence",
+    "risk_flags",
+    "escalation_to",
+    "ai_used",
+    "skill_version",
+    "reviewer",
+    "review_result",
+    "handling_minutes"
+  ],
+  "required": [
+    "merchant_id",
+    "created_at"
+  ],
+  "enums": {
+    "status": [
+      "MỚI",
+      "ĐANG XÁC MINH",
+      "CHỜ BỔ SUNG",
+      "CHỜ PHÊ DUYỆT",
+      "ĐƯỢC DUYỆT",
+      "CHỜ SẢN PHẨM",
+      "SẴN SÀNG BÁN",
+      "TẠM DỪNG/TỪ CHỐI"
+    ],
+    "seller_type": [
+      "doanh nghiệp",
+      "hộ kinh doanh",
+      "HTX"
+    ],
+    "shop_status": [
+      "chưa xác minh",
+      "đã gửi đăng ký",
+      "được kích hoạt",
+      "tạm dừng"
+    ],
+    "product_status": [
+      "chưa xác minh",
+      "chưa có",
+      "chờ duyệt",
+      "hiển thị",
+      "không hiển thị"
+    ],
+    "ready_status": [
+      "chưa xác minh",
+      "chưa sẵn sàng",
+      "chờ Trưởng nhóm xác nhận",
+      "sẵn sàng bán"
+    ],
+    "contact_status": [
+      "chưa liên hệ",
+      "đã liên hệ",
+      "chờ phản hồi",
+      "cần nhắc"
+    ],
+    "risk_flags": [
+      "nghi trùng",
+      "mâu thuẫn",
+      "thiếu nguồn",
+      "lỗi hệ thống",
+      "chờ kiểm tra ngành hàng",
+      "sự cố dữ liệu",
+      "khác đã che"
+    ],
+    "escalation_to": [
+      "cấp 1",
+      "cấp 2-kiểm duyệt nhà bán",
+      "cấp 2-ngành hàng-pháp chế",
+      "cấp 2-kỹ thuật",
+      "cấp 2-CSKH-vận chuyển-thanh toán",
+      "cấp 3-COO"
+    ],
+    "review_result": [
+      "duyệt nguyên",
+      "sửa nhỏ",
+      "sửa lớn",
+      "bỏ"
+    ],
+    "ai_used": [
+      "true",
+      "false"
+    ]
+  },
+  "list_columns": {
+    "risk_flags": ";"
+  },
+  "time_columns": [
+    "created_at",
+    "first_contact_at",
+    "status_updated_at",
+    "next_due_at"
+  ],
+  "timezone": "Asia/Ho_Chi_Minh",
+  "rules": {
+    "overdue_excluded_status": [
+      "SẴN SÀNG BÁN",
+      "TẠM DỪNG/TỪ CHỐI"
+    ],
+    "ready_condition": {
+      "ready_status": "sẵn sàng bán",
+      "shop_status": "được kích hoạt",
+      "product_status": "hiển thị"
+    },
+    "ai_true": "true",
+    "handling_minimum": 0,
+    "suspected_red_patterns": [
+      "\\d{9,16}",
+      "(?i)(?:OTP|mật\\s*khẩu|CCCD|STK)[^\\d\\n]{0,32}\\d+"
+    ]
+  }
+}

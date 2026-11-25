@@ -1,0 +1,21 @@
+# Review index — SIM-BATCH-002 r1
+
+Owner đề xuất theo quyết định của người thiết kế agent: owner Bắc (Phát triển nhà bán), người duyệt Huyền. Cột owner_proposed trong candidate vẫn null vì nguồn không nêu owner; việc gán do sổ KU của PM thực hiện.
+
+| client_record_id | title | authority | audience | facets đã rõ | flags | nguồn chính + approval_state | Quyết định (người duyệt ghi) |
+|---|---|---|---|---|---|---|---|
+| c0001 | Mô hình F2C của Hi1 và đối tượng nhà bán được hợp tác | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0002 | Giấy tờ cung cấp khi đăng ký shop, kể cả thực phẩm, TPCN, mỹ phẩm và hàng nhập khẩu | L1/RULE | staff,seller | {"category": ["thực phẩm", "TPCN", "mỹ phẩm"]} | gate0_unverified, inferred, missing_effective_date, missing_owner, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0003 | Ký hợp đồng và phụ lục với Hi1 trước khi tạo shop | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0004 | Thông tin nhà bán cung cấp để tạo và thiết lập gian hàng | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0005 | CMS (admin.hi1.vn): đăng nhập, cập nhật thông tin shop và quản lý thương hiệu | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, ocr_low, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0006 | CMS: tạo và đăng sản phẩm, giá, tồn kho, sản phẩm chờ duyệt | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, ocr_low, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0007 | CMS: tiếp nhận, xác nhận và in đơn hàng | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0008 | App Hi1 Seller: đăng nhập, quản lý sản phẩm, báo cáo, livestream, tài khoản và cài đặt shop | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, ocr_low, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0009 | App Hi1 Seller: các trạng thái đơn hàng và cách nhà bán xử lý | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, ocr_low, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0010 | Quy định cơ bản cho nhà bán: giá niêm yết, phí ship, nguồn gốc hàng hóa | L1/RULE | staff,seller | — | conflict, gate0_unverified, inferred, missing_effective_date, missing_owner, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0011 | Quy trình vận hành đơn hàng, hình thức thanh toán và đối soát (theo Sổ tay) | L1/RULE | staff,seller | — | conflict, gate0_unverified, inferred, missing_effective_date, missing_owner, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0012 | Quản lý thông tin khách hàng và chính sách đổi trả | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_effective_date, missing_owner, ocr_low, scope_unconfirmed | SIM-SRC-011 (SỔ TAY NHÀ BÁN.pdf (liên kết từ trang Nhà bán của website Hi1)) — UNKNOWN | |
+| c0013 | Thông báo triển khai mô hình Affiliate cho nhà bán (dự kiến 1/7/2026) | L1/RULE | staff,seller | — | gate0_unverified, inferred, missing_owner, scope_unconfirmed | SIM-SRC-012 (Kính gửi Quý Nhà bán.docx) — UNKNOWN | |
+
+approval_state = UNKNOWN: chưa có sổ nguồn hoặc nhãn duyệt trong tài liệu.
