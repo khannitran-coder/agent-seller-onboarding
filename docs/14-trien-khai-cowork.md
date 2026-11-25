@@ -29,7 +29,7 @@ Trong thư mục repo:
 2. `python tools/build_plugin.py --variant test` → `dist/hi1-seller-onboarding-test-<version>.zip` (KU DRAFT, chỉ dữ liệu mô phỏng).
 3. `python tools/build_plugin.py` → `dist/hi1-seller-onboarding-<version>.zip` (KU đã duyệt).
 
-Đổi KU thì chạy `tools/export_kb.py --approvals`, tăng `version` trong `plugin/.claude-plugin/plugin.json`, đóng gói và tải lại. Nếu tổ chức đồng bộ plugin từ repo ([CAI-DAT](../CAI-DAT.md)): chạy thêm `python tools/build_plugin.py --release`, commit `plugins/` và `.claude-plugin/`.
+Đổi KU thì chạy `tools/export_kb.py --approvals`, tăng `version` trong `plugin/.claude-plugin/plugin.json`, đóng gói và tải lại. Nếu tổ chức đồng bộ plugin từ repo ([CAI-DAT](../CAI-DAT.md)): chạy thêm `python tools/build_plugin.py --release`, commit `plugins/`, `releases/` và `.claude-plugin/`.
 
 ## 4. Tải lên tổ chức (Owner hoặc admin làm)
 

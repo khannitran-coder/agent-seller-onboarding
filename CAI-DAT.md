@@ -11,6 +11,7 @@ Repo này có nội dung hợp đồng và quy định nội bộ, nên để **
 | Plugin vận hành (KU đã duyệt) | `plugins/hi1-seller-onboarding/` |
 | Plugin thử nghiệm (KU DRAFT, chỉ dữ liệu mô phỏng) | `plugins/hi1-seller-onboarding-test/` |
 | Danh mục để Claude đồng bộ | `.claude-plugin/marketplace.json` |
+| Zip để tải lên thủ công | `releases/` |
 | Kiểm khói và cổng Chạy/Không chạy | [docs/14](docs/14-trien-khai-cowork.md) |
 | 14 ca pilot và mẫu ghi kết quả | [test-cases](tests/test-cases.md), [mẫu](templates/ket-qua-kiem-thu.csv), dữ liệu ở `tests/sim/` |
 | Tracker và nhật ký AI | [header 26 cột](templates/tracker-header.csv), [header nhật ký](templates/nhat-ky-ai-header.csv) |
@@ -31,7 +32,11 @@ Cách A, đồng bộ từ repo (nên dùng):
 2. Organization settings > Plugins & skills > tab Marketplaces > Add plugins > Sync from GitHub, nhập `<chủ repo>/<tên repo>`.
 3. Kiểm thấy hai plugin phiên bản 0.3.0.
 
-Cách B, tải zip: chạy `python tools/build_plugin.py --variant test` và `python tools/build_plugin.py`, rồi Add > Upload a plugin với tệp trong `dist/`.
+Cách B, tải zip (không cần Python):
+
+1. Trên GitHub mở thư mục [releases](releases/), mở `hi1-seller-onboarding-test-0.3.0.zip`, bấm Download raw file. Không dùng nút Code > Download ZIP: đó là cả repo, không phải plugin. Không giải nén.
+2. Organization settings > Plugins & skills > Add > Upload a plugin.
+3. Bản vận hành `hi1-seller-onboarding-0.3.0.zip` tải tương tự, sau khi bản test đạt.
 
 ## Bước 3. Cấp quyền
 
@@ -66,4 +71,4 @@ Tắt bản test, bật bản vận hành, chạy dòng 8–11 ở docs/14 mục
 
 ## Cập nhật sau này
 
-Sửa nguồn → `python tools/build_skills.py --check` → tăng `version` trong `plugin/.claude-plugin/plugin.json` → `python tools/build_plugin.py --release` → `python -m unittest discover -s tests/plugin` → mở PR và merge vào nhánh mặc định. Đồng bộ tự động chỉ chạy khi merge PR có tăng version; đẩy thẳng thì bấm đồng bộ lại.
+Sửa nguồn → `python tools/build_skills.py --check` → tăng `version` trong `plugin/.claude-plugin/plugin.json` → `python tools/build_plugin.py --release` → `python -m unittest discover -s tests/plugin` → commit cả `plugins/`, `releases/`, `.claude-plugin/` → mở PR và merge vào nhánh mặc định. Đồng bộ tự động chỉ chạy khi merge PR có tăng version; đẩy thẳng thì bấm đồng bộ lại.

@@ -243,3 +243,4 @@ Nguồn của phần công cụ v0.2: skill vận hành nội bộ của nhóm (
 - Lý do: gom một chỗ để cài agent lên tài khoản Claude doanh nghiệp.
 - Thay đổi: `.claude-plugin/marketplace.json` và `plugins/` (bản vận hành và bản test 0.3.0) sinh bằng `tools/build_plugin.py --release`; CAI-DAT.md; test khớp nguồn. Repo mới bắt đầu bằng một commit, lịch sử cũ ở repo gốc.
 - Chưa tải lên Claude, chưa kiểm khói, 14 ca chưa chạy.
+- Bổ sung cùng ngày: thư mục `releases/` chứa zip hai bản plugin để tải lên không cần Python; `--release` sinh và test đối chiếu.

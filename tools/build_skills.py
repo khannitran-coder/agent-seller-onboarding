@@ -113,6 +113,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8')  # Console Windows mặc định không in được tiếng Việt.
     folders, issues = check()
     if issues:
         print('\n'.join(issues), file=sys.stderr)

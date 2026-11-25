@@ -61,7 +61,9 @@ def release():
     """Chép hai bản đã đóng gói vào plugins/ và ghi danh mục marketplace. Cả hai được commit vào repo."""
     entries = []
     for variant in ('prod', 'test'):
-        out, _ = build(variant)
+        out, archive_path = build(variant)
+        (ROOT/'releases').mkdir(exist_ok=True)
+        shutil.copyfile(archive_path, ROOT/'releases'/archive_path.name)  # Để tải lên Claude mà không cần Python.
         target = ROOT/'plugins'/out.name
         if target.exists():
             shutil.rmtree(target)

@@ -97,6 +97,9 @@ class ReleaseTests(unittest.TestCase):
             committed = snapshot(ROOT/entry['source'])
             self.assertEqual(committed, snapshot(ROOT/'dist/plugin'/entry['name']), entry['name'])
             self.assertEqual(entry['version'], json.loads(committed['.claude-plugin/plugin.json'])['version'])
+            with zipfile.ZipFile(ROOT/'releases'/f"{entry['name']}-{entry['version']}.zip") as archive:
+                zipped = {n: archive.read(n).replace(b'\r\n', b'\n') for n in archive.namelist()}
+            self.assertEqual(committed, zipped, f"releases/{entry['name']}")
 
 
 if __name__ == '__main__':
