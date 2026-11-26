@@ -1,6 +1,6 @@
 # Cài Agent Seller Onboarding lên tài khoản Claude doanh nghiệp
 
-v0.3.0 – pilot, chưa COO duyệt. Dành cho Owner hoặc admin của tổ chức Claude (Team/Enterprise). Tên menu theo tài liệu hỗ trợ của Claude tra ngày 25/11/2026 ([quản lý plugin cho tổ chức](https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization)); giao diện khác thì theo giao diện và ghi lại.
+v0.4.0 – pilot, chưa COO duyệt. Dành cho Owner hoặc admin của tổ chức Claude (Team/Enterprise). Tên menu theo tài liệu hỗ trợ của Claude tra ngày 25/11/2026 ([quản lý plugin cho tổ chức](https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization)); giao diện khác thì theo giao diện và ghi lại.
 
 Repo này có nội dung hợp đồng và quy định nội bộ, nên để **Private**. Đồng bộ plugin từ GitHub (bước 2, cách A) chỉ nhận repo Private hoặc internal; khi repo chưa ở chế độ đó, dùng cách B.
 
@@ -30,13 +30,19 @@ Cách A, đồng bộ từ repo (nên dùng):
 
 1. Cài Claude GitHub App cho đúng repo này.
 2. Organization settings > Plugins & skills > tab Marketplaces > Add plugins > Sync from GitHub, nhập `<chủ repo>/<tên repo>`.
-3. Kiểm thấy hai plugin phiên bản 0.3.0.
+3. Kiểm thấy hai plugin phiên bản 0.4.0.
 
 Cách B, tải zip (không cần Python):
 
-1. Trên GitHub mở thư mục [releases](releases/), mở `hi1-seller-onboarding-test-0.3.0.zip`, bấm Download raw file. Không dùng nút Code > Download ZIP: đó là cả repo, không phải plugin. Không giải nén.
+1. Trên GitHub mở thư mục [releases](releases/), mở `hi1-seller-onboarding-test-0.4.0.zip`, bấm Download raw file. Không dùng nút Code > Download ZIP: đó là cả repo, không phải plugin. Không giải nén.
 2. Organization settings > Plugins & skills > Add > Upload a plugin.
-3. Bản vận hành `hi1-seller-onboarding-0.3.0.zip` tải tương tự, sau khi bản test đạt.
+3. Bản vận hành `hi1-seller-onboarding-0.4.0.zip` tải tương tự, sau khi bản test đạt.
+
+Zip 0.3.0 giữ lại trong `releases/` để lùi bản.
+
+### Nâng từ 0.3.0 lên 0.4.0
+
+Bản 0.4.0 thêm bước 1, 6, 9, 11 vào phạm vi AI hỗ trợ (docs/13 mục 2); hooks không đổi. Tải zip 0.4.0 cùng tên plugin để ghi đè bản 0.3.0 (cách B) hoặc bấm đồng bộ lại (cách A). Kiểm Inventory hiện 0.4.0, rồi chạy lại kiểm khói dòng 1–7 và 6 ca BX-01…BX-06 trên bản test.
 
 ## Bước 3. Cấp quyền
 
@@ -50,7 +56,7 @@ Với từng plugin, tab Inventory > menu > Default access > Install:
 ## Bước 4. Kiểm khói và kiểm thử
 
 1. Bật bản test, chạy dòng 1–7 ở [docs/14 mục 5](docs/14-trien-khai-cowork.md). Dòng 1–3 không đạt thì dừng: lớp chặn không hoạt động.
-2. Chạy 14 ca pilot, ghi vào bản sao của mẫu kết quả, lưu ngoài repo.
+2. Chạy 14 ca pilot và 6 ca bước mở rộng BX-01…BX-06, ghi vào bản sao của mẫu kết quả, lưu ngoài repo.
 
 ## Bước 5. Chuẩn bị vận hành
 

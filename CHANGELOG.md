@@ -244,3 +244,13 @@ Nguồn của phần công cụ v0.2: skill vận hành nội bộ của nhóm (
 - Thay đổi: `.claude-plugin/marketplace.json` và `plugins/` (bản vận hành và bản test 0.3.0) sinh bằng `tools/build_plugin.py --release`; CAI-DAT.md; test khớp nguồn. Repo mới bắt đầu bằng một commit, lịch sử cũ ở repo gốc.
 - Chưa tải lên Claude, chưa kiểm khói, 14 ca chưa chạy.
 - Bổ sung cùng ngày: thư mục `releases/` chứa zip hai bản plugin để tải lên không cần Python; `--release` sinh và test đối chiếu.
+
+## v0.4.0 — Mở rộng bước AI hỗ trợ: 1, 6, 9, 11 — 2026-11-27
+
+- Người thực hiện: PM - TKC (đề xuất, chờ PM xác nhận). Người quyết: người thiết kế agent, 27/11/2026.
+- Lý do: đưa bước 1 (nhận lead), 6 (hướng dẫn gian hàng), 9 (hướng dẫn vận hành đơn), 11 (bàn giao, hẹn chăm sóc) vào giai đoạn test. Bước 2 (kiểm trùng) và 10 (kiểm tra sẵn sàng bán) vẫn người làm: kiểm trùng cần đọc CMS (A01, M0); điều kiện sẵn sàng bán và nhãn trạng thái CMS chưa có nguồn.
+- Không đổi mức tự chủ: vẫn M3, người duyệt từng lần. Không bật connector, quyền ghi hay trình duyệt; hooks giữ nguyên. AI không đọc CMS; đọc tracker vẫn theo daily-operations-report và chỉ khi tracker được tạo (docs/13 điều kiện 9).
+- Skill: seller-onboarding 0.1.0 → 0.2.0 (bảng điều phối và mục “Bước 1, 6, 9, 11”: bước 6 và 9 chỉ tóm tắt KU có mã, phí và cước chưa có KU ghi “Chưa có căn cứ xác nhận”, bước 9 bắt buộc output-checker, bước 11 giữ [thời điểm], không ghi “sẵn sàng bán”); seller-communication 0.1.4 → 0.1.5 (mẫu theo bước). Project instructions v0.1.4 → v0.1.5 (cần dán lại nếu dùng phương án lùi Project).
+- Plugin 0.3.0 → 0.4.0: sinh lại `plugins/`, `.claude-plugin/marketplace.json`, thêm `releases/*-0.4.0.zip`; giữ zip 0.3.0 để lùi bản.
+- Tài liệu: docs/02 v0.2.0 (cột Pilot), docs/07 v0.2.3, docs/11 v0.1.3, docs/13 v0.4.0, docs/14 v0.2.0, CAI-DAT v0.4.0 (mục nâng bản), README.
+- Kiểm thử: thêm 6 ca BX-01…BX-06 (`tests/sim/SIM-125.md`…`SIM-130.md`), bắt buộc trước khi dùng bốn bước mới với hồ sơ thật; tổng 41 ca. `build_skills.py --check` đạt; `unittest tests/plugin` 10/10 đạt. Chưa tải 0.4.0 lên Cowork, kiểm khói và 14 ca + 6 ca BX chưa chạy.
