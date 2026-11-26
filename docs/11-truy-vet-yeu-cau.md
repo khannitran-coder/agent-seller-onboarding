@@ -1,24 +1,24 @@
 # Truy vết yêu cầu → tài liệu/Skill → ca test
 
-v0.1.2 – pilot, chưa COO duyệt
+v0.1.3 – pilot, chưa COO duyệt
 
 [CHỜ COO DUYỆT – D-01] Phạm vi pilot; các nhãn D theo tài liệu đích tiếp tục áp dụng. Đây là truy vết tài liệu vận hành, không xác nhận nghiệm thu. Nội dung yêu cầu đối chiếu theo BRD, không suy thêm đầy đủ ngoài yêu cầu.
 
-Cột ca test chỉ ánh xạ thiết kế; 14 ca pilot chưa chạy trên Claude Project. “Liên quan/chưa phủ” không đồng nghĩa được kiểm đủ. FR-06 và FR-09 không có Skill riêng: Project instructions + kho tri thức xử lý; đây là lựa chọn đã ghi nhận, không phải lỗi.
+Cột ca test chỉ ánh xạ thiết kế; 14 ca pilot chưa chạy trên Claude Project. “Liên quan/chưa phủ” không đồng nghĩa được kiểm đủ. FR-06 và FR-09 không có Skill riêng: skill điều phối seller-onboarding (plugin) hoặc Project instructions + kho tri thức xử lý; đây là lựa chọn đã ghi nhận, không phải lỗi. Từ 27/11/2026 bước 1, 6, 9, 11 thuộc phạm vi AI hỗ trợ trong pilot (ca BX-01…BX-06).
 
 | ID | Yêu cầu (1 dòng) | Bước | Skill/file | Ca test |
 |---|---|---|---|---|
-| PDHB-FR-01 | Tiếp nhận/ghi nhận lead | 1 | seller-communication; docs/05 | TC-01 (liên quan, chưa kiểm ghi hệ thống) |
+| PDHB-FR-01 | Tiếp nhận/ghi nhận lead | 1 | seller-onboarding (bước 1); seller-communication (A); docs/05 | TC-01, BX-01, BX-02 (chưa kiểm ghi hệ thống) |
 | PDHB-FR-02 | Gắn cờ nghi trùng | 2 | docs/02; docs/09 | TC-03 |
 | PDHB-FR-03 | Phân loại nhà bán/ngành hàng | 3 | seller-document-checklist | TC-01 (liên quan, chưa phủ mọi loại hình) |
 | PDHB-FR-04 | Đối chiếu checklist | 4 | seller-document-checklist | TC-01, TC-02, TC-10 |
 | PDHB-FR-05 | Nháp yêu cầu bổ sung/nhắc việc | 5 | seller-communication | TC-02 (liên quan; chưa kiểm đủ mẫu B/D) |
-| PDHB-FR-06 | Hướng dẫn thao tác shop có phiên bản | 6 | Project instructions + kho tri thức; không có Skill riêng ở v0.1.0, giữ ở v0.1.1 | SAFE-04 (đổi phiên bản; chưa phủ thao tác shop) |
+| PDHB-FR-06 | Hướng dẫn thao tác shop có phiên bản | 6 | seller-onboarding (bước 6, plugin 0.4.0) + kho tri thức; seller-communication (H, C) | BX-03, BX-04, SAFE-04 |
 | PDHB-FR-07 | Hỗ trợ sản phẩm đầu tiên | 7 | first-product-assistant | TC-06 |
 | PDHB-FR-08 | Chuyển đúng người duyệt, lưu nguyên văn kết quả | 8 | seller-document-checklist; templates/phieu-ban-giao-duyet.md | TC-08 (quyền; chưa phủ điền phiếu/lưu lý do) |
-| PDHB-FR-09 | Hướng dẫn vận hành đơn | 9 | Project instructions + kho tri thức; không có Skill riêng ở v0.1.0, giữ ở v0.1.1 | SAFE-04 (nguồn; chưa phủ vận hành đơn) |
+| PDHB-FR-09 | Hướng dẫn vận hành đơn | 9 | seller-onboarding (bước 9, plugin 0.4.0) + kho tri thức; output-checker | BX-05, SAFE-04 |
 | PDHB-FR-10 | Đánh giá sẵn sàng bán độc lập | 10 | docs/06; daily-operations-report | TC-07 |
-| PDHB-FR-11 | Bàn giao + follow-up | 11 | seller-communication (D); docs/02 | Chưa có ca trực tiếp trong 14 ca pilot |
+| PDHB-FR-11 | Bàn giao + follow-up | 11 | seller-onboarding (bước 11); seller-communication (D); docs/02 | BX-06 |
 | PDHB-FR-12 | Báo cáo tồn/ngoại lệ | 12 | daily-operations-report | TC-09 |
 | PDHB-FR-13 | Theo dõi trạng thái đa lớp | 1–12 | docs/05; docs/06 | TC-07 (một nhánh) |
 | PDHB-FR-14 | Phiếu chuyển cấp | ngoại lệ | templates/phieu-chuyen-cap.md; daily-operations-report | TC-08, TC-09 (liên quan, chưa phủ mọi cấp) |

@@ -1,6 +1,6 @@
 # SOP hằng ngày cho nhân viên
 
-v0.2.2 – pilot, chưa COO duyệt
+v0.2.3 – pilot, chưa COO duyệt
 
 ## SOP pilot (đọc trước)
 
@@ -9,7 +9,7 @@ Theo quyết định của người thiết kế agent, 22–25/11/2026. Pilot b
 | Việc | Quy tắc |
 |---|---|
 | Phạm vi | Doanh nghiệp, HTX, hộ kinh doanh có MST và hóa đơn; hàng thông thường. Thực phẩm, TPCN, mỹ phẩm, hàng nhập khẩu, OCOP: chỉ đối chiếu giấy tờ rồi chuyển kiểm duyệt ngành hàng. Cá nhân tự do: chuyển Trưởng nhóm |
-| AI hỗ trợ | Bước 3, 4, 5, 7, 8, 12 của [quy trình](02-quy-trinh-12-buoc.md). Các bước khác người làm |
+| AI hỗ trợ | Bước 1, 3, 4, 5, 6, 7, 8, 9, 11, 12 của [quy trình](02-quy-trinh-12-buoc.md) (bước 1, 6, 9, 11 thêm ngày 27/11/2026). Bước 2 (kiểm trùng) và 10 (kiểm tra sẵn sàng bán) người làm. Bước 6 và 9: AI chỉ tóm tắt KU; nhân viên so lại tài liệu gốc trước khi gửi, nhất là KU có cờ ocr_low. Bước 1: AI không kiểm trùng, nhân viên vẫn tự làm bước 2 |
 | Project | Hồ sơ thật chỉ dùng “HI1 Seller Onboarding”. Project thử nghiệm chỉ dùng dữ liệu mô phỏng |
 | Dữ liệu được đưa vào | Tên, SĐT, email, MST, địa chỉ, số CCCD người đại diện, số tài khoản công ty; chỉ phần cần dùng. Công cụ ảnh/PDF và bảng giá không nhận giấy tờ tuỳ thân |
 | Dữ liệu cấm | Mật khẩu, OTP, token, khóa API |

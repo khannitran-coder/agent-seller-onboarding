@@ -1,6 +1,6 @@
 # Triển khai pilot bằng plugin Cowork
 
-v0.1.0 – pilot, chưa COO duyệt
+v0.2.0 – pilot, chưa COO duyệt
 
 Quyết định người thiết kế agent, 25/11/2026: pilot hồ sơ thật, mức tự chủ 3, chạy bằng plugin Cowork. Cách cài bằng Claude Project ở [cai-dat-claude](../project/cai-dat-claude.md) giữ làm phương án lùi. Tên menu theo tài liệu hỗ trợ của Claude tra ngày 25/11/2026 ([dùng plugin](https://support.claude.com/en/articles/13837440-use-plugins-in-claude), [quản lý plugin cho tổ chức](https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization)); giao diện khác thì theo giao diện và ghi lại.
 
@@ -8,7 +8,7 @@ Quyết định người thiết kế agent, 25/11/2026: pilot hồ sơ thật, 
 
 | Phần | Vai trò | Nguồn trong repo |
 |---|---|---|
-| Skill `seller-onboarding` | Điều phối, kho tri thức, giới hạn | `plugin/skills/`, `project/claude-project-instructions.md`, `project/kb/` |
+| Skill `seller-onboarding` | Điều phối theo bước (AI hỗ trợ bước 1, 3–9, 11, 12; bước 2, 10 người làm), kho tri thức, giới hạn | `plugin/skills/`, `project/claude-project-instructions.md`, `project/kb/` |
 | Sáu skill nghiệp vụ | Một việc mỗi skill | `skills/` |
 | Agent `output-checker` | Soát nguồn, lời hứa, định dạng | `plugin/agents/` |
 | Hooks | Chặn mật khẩu/OTP/token trong tin nhập; chặn công cụ ghi và trình duyệt; bắt sửa đầu ra thiếu contract hoặc lặp số CCCD/tài khoản | `plugin/hooks/` |
@@ -67,7 +67,7 @@ Sau khi bản vận hành được cài, kiểm thêm:
 Nhận hồ sơ thật chỉ khi:
 
 1. Mục 5 đạt đủ trên đúng tài khoản pilot.
-2. 14 ca pilot trong [test-cases](../tests/test-cases.md) chạy trên bản test, ghi vào bản sao của [mẫu kết quả](../templates/ket-qua-kiem-thu.csv), không ca nào chưa đạt.
+2. 14 ca pilot và 6 ca bước mở rộng BX-01…BX-06 trong [test-cases](../tests/test-cases.md) chạy trên bản test, ghi vào bản sao của [mẫu kết quả](../templates/ket-qua-kiem-thu.csv), không ca nào chưa đạt.
 3. Các điều kiện bắt buộc ở [docs/13](13-dieu-kien-chay-thu-ho-so-that.md) đạt, gồm tracker và tab nhật ký AI.
 4. Người pilot đã đọc SOP và biết người ghi sự cố.
 

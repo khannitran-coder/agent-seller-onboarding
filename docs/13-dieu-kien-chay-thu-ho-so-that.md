@@ -1,6 +1,6 @@
 # Điều kiện chạy thử với hồ sơ thật
 
-v0.3.0 – pilot, chưa COO duyệt
+v0.4.0 – pilot, chưa COO duyệt
 
 Danh sách kiểm Chạy/Không chạy cho người thiết kế agent. Quyết định giai đoạn 1 của người thiết kế agent (2026-11-22): không cần COO ký; các nhãn [CHỜ COO DUYỆT] trong repo giữ nguyên làm lịch sử và không chặn pilot. Tài liệu này không coi bản pilot là chính sách đã duyệt.
 
@@ -16,7 +16,7 @@ Theo bảng trả lời đào tạo của COO và [tổng quan](01-tong-quan.md)
 |---|---|
 | Nhà bán | Doanh nghiệp, HTX, hộ kinh doanh có MST và hóa đơn (theo tờ rơi mở shop). Không nhận cá nhân tự do; gặp thì chuyển Trưởng nhóm |
 | Ngành hàng | Hàng thông thường. Thực phẩm, TPCN, mỹ phẩm, hàng nhập khẩu, OCOP: chỉ đối chiếu giấy tờ theo danh sách trong KU 002:c0002 (KU duyệt cho pilot), chuyển kiểm duyệt ngành hàng vì chưa có KU duyệt về điều kiện ngành hàng |
-| Bước AI hỗ trợ | Bước 3, 4, 5 (phân loại, đối chiếu checklist, nháp yêu cầu bổ sung), 7 (nháp sản phẩm), 8 (phiếu bàn giao duyệt), 12 (báo cáo). Bước 1, 2, 6, 9, 10, 11 do người làm; AI không hỗ trợ trong pilot. Xem [quy trình](02-quy-trinh-12-buoc.md) |
+| Bước AI hỗ trợ | Bước 1 (kiểm trường thiếu của lead, nháp chào), 3, 4, 5 (phân loại, đối chiếu checklist, nháp yêu cầu bổ sung), 6 (tóm tắt hướng dẫn App/CMS theo KU), 7 (nháp sản phẩm), 8 (phiếu bàn giao duyệt), 9 (tóm tắt vận hành đơn theo KU), 11 (nháp nhắc việc khi bàn giao), 12 (báo cáo). Bước 2 và 10 do người làm. Bước 1, 6, 9, 11 thêm ngày 27/11/2026 theo quyết định người thiết kế agent, chạy trên bản test với dữ liệu mô phỏng trước (ca BX-01…BX-06). Xem [quy trình](02-quy-trinh-12-buoc.md) |
 | Quy mô | 10–15 hồ sơ, 2–4 tuần, 2–3 nhân viên |
 | Cách chạy | Song song: nhân viên làm như cũ, AI soạn nháp để so sánh; không gửi nhà bán lời AI chưa có KU APPROVED |
 | Ngoài phạm vi | AI gửi tin, sửa CMS hoặc tracker, duyệt, kích hoạt, đăng sản phẩm; hứa ngày duyệt, doanh thu, ưu đãi; trả lời về phí thanh toán, cước vận chuyển, ngành hàng cấm khi chưa có KU APPROVED |
@@ -37,7 +37,7 @@ Trạng thái ghi theo bằng chứng trong repo; việc chưa có bằng chứn
 | 4 | Owner và người duyệt từng nhóm | Người thiết kế agent | Đã xác định: Bắc là owner, Huyền duyệt |
 | 5 | Gate 0 cho tài liệu đưa vào kho dùng chung | Owner tài liệu | Đã áp dụng cho nguồn đã xử lý: khối có số tài khoản và chữ ký bị loại khỏi KU. Hồ sơ nhà bán xử lý từng ca không cần che theo quyết định giai đoạn 1 |
 | 6 | Không kết luận phần đang mâu thuẫn (CF-01); dùng đúng quyết định CF-02…CF-06 | Owner | Quyết định 25/11/2026: CF-02…CF-06 đã quyết, chín KU revision mới đã duyệt; CF-01 mở, 2 KU gắn nhãn. Hành vi chưa kiểm trên Cowork. Văn bản gốc (Phụ lục Affiliate, Sổ tay, tờ rơi) chưa sửa |
-| 7 | 14 ca pilot chạy trên Claude Project, ghi kết quả thực tế ([test-cases](../tests/test-cases.md)); SAFE-02 đã đổi theo quyết định giai đoạn 1 | Người kiểm định | Chưa chạy |
+| 7 | 14 ca pilot và 6 ca bước mở rộng BX-01…BX-06 chạy trên plugin bản test, ghi kết quả thực tế ([test-cases](../tests/test-cases.md)); SAFE-02 đã đổi theo quyết định giai đoạn 1 | Người kiểm định | Chưa chạy |
 | 8 | Bộ đánh giá 50–80 ca phân tầng, có phần ca giữ riêng; cổng cứng bằng 0, ba chỉ số mềm đạt ngưỡng (đúng-có-căn-cứ ≥95%, từ chối đúng ≥95%, độ phủ ≥85%) | Người kiểm định | Chưa có bộ ca |
 | 9 | Tracker 26 cột và tab nhật ký AI 9 cột đã tạo theo [template](../templates/nhat-ky-ai-header.csv) | Người giữ tracker | Chưa. Chỉ có mẫu |
 | 10 | Người phụ trách ghi sự cố (mật khẩu/OTP/token lộ, AI vượt quyền) đã đặt tên, kênh chuyển cấp ([xử lý sự cố](09-xu-ly-su-co.md)) | Người thiết kế agent | Đã có người (người dùng xác nhận 25/11/2026); kênh chuyển cấp chưa ghi |
