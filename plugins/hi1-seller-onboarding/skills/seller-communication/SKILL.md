@@ -5,9 +5,9 @@ description: "Soạn nháp tin lịch sự theo mẫu A–I, giữ placeholder v
 
 # seller-communication
 
-version: 0.1.4
+version: 0.1.5
 
-v0.1.4 – pilot, chưa COO duyệt
+v0.1.5 – pilot, chưa COO duyệt
 
 ## Mục đích
 
@@ -16,6 +16,8 @@ Soạn nháp lịch sự, không gây áp lực.
 ## Khi nào dùng / không dùng
 
 Dùng khi soạn nháp tin nhà bán: chào mừng, yêu cầu bổ sung, sau duyệt hoặc nhắc việc theo mẫu A–I. Không dùng để ra quyết định thay người, xử lý dữ liệu Đỏ, truy cập ngoài quyền hoặc thay nguồn APPROVED bằng bản dự thảo.
+
+Mẫu theo bước của quy trình 12 bước (pilot từ 27/11/2026): bước 1 mẫu A; bước 5 mẫu B hoặc F; bước 6 mẫu H, mẫu C chỉ khi có bằng chứng duyệt; bước 11 mẫu D. Bước 11: mốc chăm sóc giữ [thời điểm] tới khi người có thẩm quyền xác nhận; không ghi “sẵn sàng bán” khi chưa có xác nhận của Trưởng nhóm.
 
 ## Input bắt buộc
 
