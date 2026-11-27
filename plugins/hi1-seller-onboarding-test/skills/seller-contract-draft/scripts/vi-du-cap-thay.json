@@ -1,0 +1,9 @@
+{
+  "source": "<thu-muc-mau>/mau-hop-dong.docx",
+  "output": "<thu-muc-ban-sao>/hop-dong-nhap.docx",
+  "pairs": [
+    ["<SO_HOP_DONG>", "<SO_DO_NGUOI_CUNG_CAP>"],
+    ["<TEN_BEN_B>", "<TEN_CHU_THE_DA_XAC_NHAN>"],
+    ["<NGAY_KY>", "<NGAY_DA_XAC_NHAN>"]
+  ]
+}
