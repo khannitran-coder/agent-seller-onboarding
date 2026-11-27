@@ -1,6 +1,6 @@
 # Cài Agent Seller Onboarding lên tài khoản Claude doanh nghiệp
 
-v0.4.0 – pilot, chưa COO duyệt. Dành cho Owner hoặc admin của tổ chức Claude (Team/Enterprise). Tên menu theo tài liệu hỗ trợ của Claude tra ngày 25/11/2026 ([quản lý plugin cho tổ chức](https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization)); giao diện khác thì theo giao diện và ghi lại.
+v0.5.0 – pilot, chưa COO duyệt. Dành cho Owner hoặc admin của tổ chức Claude (Team/Enterprise). Tên menu theo tài liệu hỗ trợ của Claude tra ngày 25/11/2026 ([quản lý plugin cho tổ chức](https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization)); giao diện khác thì theo giao diện và ghi lại.
 
 Repo này có nội dung hợp đồng và quy định nội bộ, nên để **Private**. Đồng bộ plugin từ GitHub (bước 2, cách A) chỉ nhận repo Private hoặc internal; khi repo chưa ở chế độ đó, dùng cách B.
 
@@ -18,7 +18,7 @@ Repo này có nội dung hợp đồng và quy định nội bộ, nên để **
 | Hướng dẫn nhân viên và sự cố | [SOP](docs/07-sop-nhan-vien.md), [xử lý sự cố](docs/09-xu-ly-su-co.md) |
 | Mã nguồn để sửa | `plugin/`, `skills/`, `project/`, `kb-workspace/`, `tools/` |
 
-Phiếu duyệt KU đang dùng: `phe-duyet-ku-pilot-2026-11-25-r2.csv` ở gốc repo, ghi vai trò người duyệt, không ghi tên cá nhân. Đưa vào repo này theo quyết định của người dùng ngày 25/11/2026, là ngoại lệ so với quy tắc lưu nội bộ; phiếu có tên người duyệt thì không commit. Sinh lại gói tri thức: `python tools/export_kb.py --approvals phe-duyet-ku-pilot-2026-11-25-r2.csv`.
+Phiếu duyệt KU đang dùng: `kb-workspace/ai-seller-onboarding/phe-duyet-ku-pilot-2026-11-25-r2.csv` (chuyển từ gốc repo ngày 27/11/2026), ghi vai trò người duyệt, không ghi tên cá nhân. Đưa vào repo này theo quyết định của người dùng ngày 25/11/2026, là ngoại lệ so với quy tắc lưu nội bộ; phiếu có tên người duyệt thì không commit. Sinh lại gói tri thức: `python tools/export_kb.py --approvals kb-workspace/ai-seller-onboarding/phe-duyet-ku-pilot-2026-11-25-r2.csv`.
 
 ## Bước 1. Bật tính năng
 
@@ -30,15 +30,19 @@ Cách A, đồng bộ từ repo (nên dùng):
 
 1. Cài Claude GitHub App cho đúng repo này.
 2. Organization settings > Plugins & skills > tab Marketplaces > Add plugins > Sync from GitHub, nhập `<chủ repo>/<tên repo>`.
-3. Kiểm thấy hai plugin phiên bản 0.4.0.
+3. Kiểm thấy hai plugin phiên bản 0.5.0.
 
 Cách B, tải zip (không cần Python):
 
-1. Trên GitHub mở thư mục [releases](releases/), mở `hi1-seller-onboarding-test-0.4.0.zip`, bấm Download raw file. Không dùng nút Code > Download ZIP: đó là cả repo, không phải plugin. Không giải nén.
+1. Trên GitHub mở thư mục [releases](releases/), mở `hi1-seller-onboarding-test-0.5.0.zip`, bấm Download raw file. Không dùng nút Code > Download ZIP: đó là cả repo, không phải plugin. Không giải nén.
 2. Organization settings > Plugins & skills > Add > Upload a plugin.
-3. Bản vận hành `hi1-seller-onboarding-0.4.0.zip` tải tương tự, sau khi bản test đạt.
+3. Bản vận hành `hi1-seller-onboarding-0.5.0.zip` tải tương tự, sau khi bản test đạt.
 
-Zip 0.3.0 giữ lại trong `releases/` để lùi bản.
+Zip 0.3.0 và 0.4.0 giữ lại trong `releases/` để lùi bản.
+
+### Nâng lên 0.5.0
+
+Bản 0.5.0 đóng thêm hai skill bản nháp `seller-cms-entry` và `seller-contract-draft` vào plugin (9 skill). Hai skill này tự dừng khi bị gọi cho tới khi có D-07a/b, D-08b; hooks không đổi. Cách nâng giống mục dưới, thay số phiên bản.
 
 ### Nâng từ 0.3.0 lên 0.4.0
 

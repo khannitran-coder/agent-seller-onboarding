@@ -1,4 +1,4 @@
-# Agent Seller Onboarding (HI1) — v0.4.0
+# Agent Seller Onboarding (HI1) — v0.5.0
 
 **Cài agent lên tài khoản Claude doanh nghiệp: đọc [CAI-DAT.md](CAI-DAT.md).**
 
@@ -12,7 +12,7 @@ AI Engineering & Scalable Automation
 Backend + API + Database + AI Orchestration
 Mục tiêu: Chuyển những workflow đã chứng minh giá trị sang hệ thống tích hợp, tự động hóa và có khả năng mở rộng
 
-Bản phát hành v0.4.0 – pilot, chưa COO duyệt. Mới ở v0.4.0: AI hỗ trợ thêm bước 1, 6, 9, 11 trong giai đoạn test (xem [Phạm vi AI theo bước](#phạm-vi-ai-theo-bước) và [CHANGELOG](CHANGELOG.md)). Đang lấy góp ý của team trước khi chốt.
+Bản phát hành v0.5.0 – pilot, chưa COO duyệt. Mới ở v0.5.0: hai skill bản nháp chuyển vào `skills/` và có trong plugin (vẫn chưa được dùng), repo sắp xếp lại. v0.4.0: AI hỗ trợ thêm bước 1, 6, 9, 11 trong giai đoạn test (xem [Phạm vi AI theo bước](#phạm-vi-ai-theo-bước) và [CHANGELOG](CHANGELOG.md)). Đang lấy góp ý của team trước khi chốt.
 
 Xem [hướng dẫn đọc và góp ý](docs/00-huong-dan-doc-va-gop-y.md) để chọn tài liệu theo vai trò và ghi nhận ý kiến.
 
@@ -26,7 +26,7 @@ Xem [hướng dẫn đọc và góp ý](docs/00-huong-dan-doc-va-gop-y.md) để
 | Kiểm duyệt nhà bán, ngành hàng | skills/seller-document-checklist (9 mục giấy tờ), skills/first-product-assistant (nội dung sản phẩm, claim), docs/03 guardrails | 30 phút |
 | CEO, COO | README: Kiến trúc hiện tại, Mức tự chủ, Quyết định đang chờ; docs/12 | 20 phút |
 
-## Kiến trúc hiện tại (v0.4.0)
+## Kiến trúc hiện tại (v0.5.0)
 
 Hệ thống là lớp hỗ trợ soạn thảo đặt cạnh quy trình onboarding nhà bán đang chạy, triển khai bằng plugin Cowork (quyết định 25/11/2026; Claude Project là phương án lùi). AI ở mức tự chủ 3: đọc dữ liệu được cấp, đối chiếu, soạn nháp. Mọi thao tác ghi (gửi tin, sửa CMS, cập nhật tracker) do người thực hiện. Không có tích hợp hệ thống; dữ liệu giữa các thành phần đi qua tay nhân viên. Mức tự chủ được quy định theo từng hành động tại docs/12; hiện tại tất cả ở M3 hoặc thấp hơn.
 
@@ -40,7 +40,7 @@ Hệ thống là lớp hỗ trợ soạn thảo đặt cạnh quy trình onboard
 | Kho tri thức | Thư mục Drive + Project knowledge | Checklist, chính sách, mẫu tin, hướng dẫn giao diện có phiên bản | Chỉ tài liệu APPROVED được nạp |
 | Lớp điều phối | Plugin Cowork `hi1-seller-onboarding` (bản test `-test`): skill `seller-onboarding`, agent `output-checker` | Điều phối theo bước, instructions chung (guardrails, chặn dữ liệu Đỏ, output contract), kho tri thức, soát chéo đầu ra | Không có quyền ghi ra ngoài. Phương án lùi: Claude Project "HI1 Seller Onboarding" |
 | Lớp chặn | Hooks của plugin (`plugin/hooks/`) | Chặn mật khẩu/OTP/token trong tin nhập; chặn công cụ ghi qua connector và trình duyệt; bắt viết lại đầu ra thiếu contract | Áp cho mọi tác vụ khi plugin bật; chưa xác minh trên Cowork (kiểm khói docs/14 mục 5) |
-| Skill | `seller-onboarding` trong plugin/; 6 Skill nghiệp vụ trong skills/; 2 bản nháp trong skills-draft/ | Một nghiệp vụ mỗi Skill, phiên bản riêng | Chỉ cài skills/; skills-draft/ không cài, chưa kích hoạt |
+| Skill | `seller-onboarding` trong plugin/; 8 Skill trong skills/ (6 nghiệp vụ, 2 bản nháp) | Một nghiệp vụ mỗi Skill, phiên bản riêng | Hai bản nháp seller-cms-entry, seller-contract-draft có trong plugin từ 0.5.0 nhưng tự dừng khi bị gọi cho tới D-07a/b, D-08b |
 | Báo cáo định kỳ | Scheduled task 17:00 (Asia/Ho_Chi_Minh) | Chạy daily-operations-report trên tracker | Chỉ đọc; bật sau quyết định D-03 |
 
 ### Luồng xử lý một hồ sơ
@@ -90,7 +90,7 @@ Hồ sơ có một trạng thái nghiệp vụ (8 nhãn, docs/06) và ba trạng
 
 ### Phiên bản và truy vết
 
-Mỗi Skill có phiên bản riêng; mỗi dòng tracker ghi skill_version và checklist_version của lần xử lý. Bản references trong Skill được đồng bộ từ docs khi docs thay đổi. Mỗi thay đổi Skill phải chạy lại 14 ca kiểm thử (và 6 ca BX cho bước 1, 6, 9, 11) và ghi CHANGELOG. Plugin có version riêng trong `plugin/.claude-plugin/plugin.json` (hiện 0.4.0). Yêu cầu nghiệp vụ truy vết tới Skill và ca kiểm thử trong docs/11.
+Mỗi Skill có phiên bản riêng; mỗi dòng tracker ghi skill_version và checklist_version của lần xử lý. Bản references trong Skill được đồng bộ từ docs khi docs thay đổi. Mỗi thay đổi Skill phải chạy lại 14 ca kiểm thử (và 6 ca BX cho bước 1, 6, 9, 11) và ghi CHANGELOG. Plugin có version riêng trong `plugin/.claude-plugin/plugin.json` (hiện 0.5.0). Yêu cầu nghiệp vụ truy vết tới Skill và ca kiểm thử trong docs/11.
 
 ### Mức tự chủ
 
@@ -134,10 +134,10 @@ Xem [ma trận tự chủ và rủi ro](docs/12-ma-tran-tu-chu-va-rui-ro.md).
 | [daily-operations-report](skills/daily-operations-report/SKILL.md) | Báo cáo tracker, nháp chuyển cấp | 0.2.2 | Cài được – pilot |
 | [affiliate-price-review](skills/affiliate-price-review/SKILL.md) | Kiểm bảng giá Affiliate | 0.1.1 | Cài được – ngoài pilot |
 | [seller-media-tools](skills/seller-media-tools/SKILL.md) | Ảnh vuông, gộp PDF bản sao | 0.1.0 | Cài được – ngoài pilot |
-| [seller-cms-entry](skills-draft/seller-cms-entry/SKILL.md) | Thiết kế nhập form CMS | 0.0.1 | Bản nháp – chờ D-07a,b |
-| [seller-contract-draft](skills-draft/seller-contract-draft/SKILL.md) | Thiết kế ghép hợp đồng/phụ lục | 0.0.1 | Bản nháp – chờ D-08b |
+| [seller-cms-entry](skills/seller-cms-entry/SKILL.md) | Thiết kế nhập form CMS | 0.0.2 | Bản nháp trong plugin, tự dừng – chờ D-07a,b |
+| [seller-contract-draft](skills/seller-contract-draft/SKILL.md) | Thiết kế ghép hợp đồng/phụ lục | 0.0.2 | Bản nháp trong plugin, tự dừng – chờ D-08b |
 
-Cài được không đồng nghĩa đã được cấp quyền hoặc được tự chạy A06. Chỉ dùng phạm vi được duyệt; skills-draft/ không cài hoặc dùng trước quyết định tương ứng.
+Cài được không đồng nghĩa đã được cấp quyền hoặc được tự chạy A06. Chỉ dùng phạm vi được duyệt. Hai bản nháp được đóng vào plugin theo quyết định người thiết kế agent ngày 27/11/2026 nhưng không dùng trước quyết định tương ứng; với phương án lùi Claude Project thì không cài hai zip này.
 
 ## Quyết định đang chờ
 
@@ -159,7 +159,7 @@ Các nội dung [CHỜ COO DUYỆT] là dự thảo, chưa cấp thêm quyền. 
 
 ## Cài đặt
 
-Pilot triển khai bằng plugin Cowork (quyết định 25/11/2026): cài theo [CAI-DAT.md](CAI-DAT.md) (zip 0.4.0 trong `releases/`), kiểm khói theo [docs/14](docs/14-trien-khai-cowork.md). Mã plugin ở `plugin/`, đóng gói bằng `python tools/build_plugin.py`, kiểm bằng `python -m unittest discover -s tests/plugin`. Các bước Claude Project dưới đây giữ làm phương án lùi.
+Pilot triển khai bằng plugin Cowork (quyết định 25/11/2026): cài theo [CAI-DAT.md](CAI-DAT.md) (zip 0.5.0 trong `releases/`), kiểm khói theo [docs/14](docs/14-trien-khai-cowork.md). Mã plugin ở `plugin/`, đóng gói bằng `python tools/build_plugin.py`, kiểm bằng `python -m unittest discover -s tests/plugin`. Các bước Claude Project dưới đây giữ làm phương án lùi.
 
 Hướng dẫn cài vào tài khoản doanh nghiệp kèm prompt cho Claude desktop: [project/cai-dat-claude.md](project/cai-dat-claude.md).
 
@@ -199,6 +199,23 @@ Trong mục Kiến trúc giữ nguyên văn, “14 ca kiểm thử” nghĩa là
 
 ## Cấu trúc thư mục
 
+~~~text
+agent-seller-onboarding/
+├── README.md, CAI-DAT.md, CHANGELOG.md, AUDIT.md
+├── docs/                 00–14: quy trình, guardrails, dữ liệu, SOP, tự chủ, triển khai
+├── plugin/               nguồn plugin: manifest, skill seller-onboarding, agent, hooks
+├── skills/               8 Skill (6 nghiệp vụ + 2 bản nháp)
+├── project/              instructions, gói tri thức kb/ (vận hành) và kb-draft/ (test)
+├── kb-workspace/         candidate KU, sổ nguồn, phiếu duyệt KU
+├── templates/            tracker, nhật ký AI, phiếu, mẫu kết quả kiểm thử
+├── tests/                test-cases.md, sim/, fixtures/, plugin/
+├── tools/                build_skills.py, build_plugin.py, export_kb.py
+├── plugins/, .claude-plugin/   bản đóng gói để đồng bộ marketplace (sinh tự động)
+└── releases/             zip plugin để tải lên (giữ bản cũ để lùi)
+~~~
+
+Nguồn để sửa: `docs/`, `plugin/`, `skills/`, `project/`, `kb-workspace/`, `templates/`, `tools/`. Không sửa tay `plugins/`, `.claude-plugin/`, `releases/`: chạy `python tools/build_plugin.py --release`.
+
 | Thư mục / tệp | Nội dung |
 |---|---|
 | CAI-DAT.md | Cài plugin lên tổ chức Claude Team/Enterprise |
@@ -207,11 +224,10 @@ Trong mục Kiến trúc giữ nguyên văn, “14 ca kiểm thử” nghĩa là
 | plugins/, .claude-plugin/ | Hai bản plugin đã đóng gói (vận hành, test) và danh mục marketplace `hi1-noi-bo` để đồng bộ từ GitHub; sinh bằng `tools/build_plugin.py --release` |
 | releases/ | Zip plugin để tải lên thủ công; giữ bản trước để lùi |
 | project/ | Instructions, hướng dẫn cài đặt, danh mục kho tri thức và gói nạp do export_kb.py sinh: kb-draft/ (Project thử nghiệm), kb/ (Project vận hành) |
-| skills/ | Sáu Skill cài được, references/templates/scripts tự chứa |
-| skills-draft/ | Hai bản nháp chưa kích hoạt, không cài |
+| skills/ | Tám Skill: sáu nghiệp vụ và hai bản nháp (seller-cms-entry, seller-contract-draft); references/templates/scripts tự chứa |
 | templates/ | Góp ý, tracker 26 cột, nhật ký AI 9 cột, phiếu bàn giao/chuyển cấp, mẫu phê duyệt KU, hàng chờ hỏi owner |
 | tests/ | 41 ca thiết kế, input SIM, fixture và expected JSON, test hook/gói plugin; không hồ sơ thật |
-| kb-workspace/ | Đầu ra mô phỏng của bước biên tập tri thức (candidate KU DRAFT, log mâu thuẫn/khoảng trống, đối soát label). Không phải kho APPROVED, không nạp Project |
+| kb-workspace/ | Đầu ra mô phỏng của bước biên tập tri thức (candidate KU DRAFT, log mâu thuẫn/khoảng trống, đối soát label), sổ nguồn và phiếu duyệt KU đang dùng. Không phải kho APPROVED, không nạp Project |
 | tools/ | Kiểm và đóng gói Skill (build_skills.py); đóng gói plugin (build_plugin.py); sinh catalog và gói nạp từ candidate KU (export_kb.py) |
 | .github/ | Workflow kiểm tra tự động |
 | CHANGELOG.md / AUDIT.md | Lịch sử thay đổi / nhật ký kiểm định |

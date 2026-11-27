@@ -254,3 +254,12 @@ Nguồn của phần công cụ v0.2: skill vận hành nội bộ của nhóm (
 - Plugin 0.3.0 → 0.4.0: sinh lại `plugins/`, `.claude-plugin/marketplace.json`, thêm `releases/*-0.4.0.zip`; giữ zip 0.3.0 để lùi bản.
 - Tài liệu: docs/02 v0.2.0 (cột Pilot), docs/07 v0.2.3, docs/11 v0.1.3, docs/13 v0.4.0, docs/14 v0.2.0, CAI-DAT v0.4.0 (mục nâng bản), README.
 - Kiểm thử: thêm 6 ca BX-01…BX-06 (`tests/sim/SIM-125.md`…`SIM-130.md`), bắt buộc trước khi dùng bốn bước mới với hồ sơ thật; tổng 41 ca. `build_skills.py --check` đạt; `unittest tests/plugin` 10/10 đạt. Chưa tải 0.4.0 lên Cowork, kiểm khói và 14 ca + 6 ca BX chưa chạy.
+
+## v0.5.0 — Gộp skill bản nháp vào skills/ và sắp xếp repo — 2026-11-27
+
+- Người thực hiện: PM - TKC (đề xuất, chờ PM xác nhận). Người quyết: người thiết kế agent, 27/11/2026.
+- Quyết định: chuyển `seller-cms-entry` và `seller-contract-draft` từ `skills-draft/` vào `skills/` và đóng vào plugin. Thay quy tắc cũ “không cài skills-draft” (docs/02, 12, 13). Chưa có D-07a/b, D-08b: hai skill vẫn không được dùng.
+- Kiểm soát: hai skill 0.0.1 → 0.0.2 ghi rõ BẢN NHÁP, khi bị gọi trả “Dừng – skill chưa được phép dùng”; seller-onboarding 0.2.0 → 0.2.1 cấm gọi hai skill này; hooks không đổi (chặn trình duyệt và công cụ ghi). Rủi ro còn lại: hai skill hiện trong danh sách skill của người pilot; nếu hooks không chạy trên Cowork thì chỉ còn chỉ dẫn trong skill chặn việc điền CMS.
+- Sắp xếp: chuyển phiếu duyệt KU vào `kb-workspace/ai-seller-onboarding/`; xoá `skills-draft/`; README thêm sơ đồ thư mục và quy tắc nguồn/bản sinh.
+- Plugin 0.4.0 → 0.5.0 (9 skill); giữ zip 0.3.0, 0.4.0. Tài liệu: CAI-DAT v0.5.0, docs/02, 11 v0.1.4, 12, 13, 14, project/cai-dat-claude, tests/test-cases, tools/claude-ai-descriptions.json.
+- Kiểm: `build_skills.py --check` đạt 8 Skill; `unittest tests/plugin` 10/10 (thêm kiểm hai bản nháp có dòng BẢN NHÁP và lệnh dừng). Kiểm khói, 14 ca và 6 ca BX chưa chạy trên 0.5.0.
