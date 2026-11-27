@@ -1,7 +1,7 @@
 """Tác giả: PM - TKC. Ghép plugin/, skills/, instructions và gói tri thức thành zip plugin. Không cài hay tải lên.
 
 Nguồn duy nhất vẫn là skills/, project/ và plugin/; dist/ là đầu ra sinh lại được.
---release ghi thêm plugins/ và .claude-plugin/marketplace.json để Claude đồng bộ thẳng từ repo. skills-draft/ không bao giờ được đóng gói.
+--release ghi thêm plugins/ và .claude-plugin/marketplace.json để Claude đồng bộ thẳng từ repo. Mọi Skill trong skills/ được đóng gói, kể cả hai bản nháp seller-cms-entry và seller-contract-draft (từ 0.5.0, tự dừng khi bị gọi).
 """
 import argparse
 import json
