@@ -1,6 +1,6 @@
 # Truy vết yêu cầu → tài liệu/Skill → ca test
 
-v0.1.3 – pilot, chưa COO duyệt
+v0.1.4 – pilot, chưa COO duyệt
 
 [CHỜ COO DUYỆT – D-01] Phạm vi pilot; các nhãn D theo tài liệu đích tiếp tục áp dụng. Đây là truy vết tài liệu vận hành, không xác nhận nghiệm thu. Nội dung yêu cầu đối chiếu theo BRD, không suy thêm đầy đủ ngoài yêu cầu.
 
@@ -76,8 +76,8 @@ Chỉ là đề xuất chưa có hiệu lực. Bốn Skill hiện hành không �
 |---|---|---|---|---|
 | affiliate-price-review | FR-07/FR-08, chuẩn bị bảng giá bước 7–8 | A06 | PR-01…PR-06 | Cài được, chỉ kiểm nháp; D-04, D-08b; chưa tự bật A06 |
 | seller-media-tools | FR-07/FR-08, ảnh/PDF bước 7–8 | A06 | MT-01…MT-04 | Cài được, chỉ bản sao; người kiểm; chưa tự bật A06 |
-| seller-contract-draft | FR-08, chuẩn bị bộ hợp đồng | A06 | Không viết ca cho bản nháp | skills-draft/, 0.0.1; KHÔNG cài/dùng trước D-08b |
-| seller-cms-entry | FR-06/FR-07, chuẩn bị form | A01/A05 | Không viết ca cho bản nháp | skills-draft/, 0.0.1; KHÔNG cài/dùng trước D-07a/D-07b |
+| seller-contract-draft | FR-08, chuẩn bị bộ hợp đồng | A06 | Không viết ca cho bản nháp | skills/, 0.0.2, có trong plugin từ 0.5.0; KHÔNG dùng trước D-08b |
+| seller-cms-entry | FR-06/FR-07, chuẩn bị form | A01/A05 | Không viết ca cho bản nháp | skills/, 0.0.2, có trong plugin từ 0.5.0; KHÔNG dùng trước D-07a/D-07b |
 
 Bảng này bổ sung phương tiện hỗ trợ, không mở rộng quyền hiện hành. Trạng thái đóng gói ở trên không phải phê duyệt quyền tự động hoá.
 

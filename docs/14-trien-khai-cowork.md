@@ -10,6 +10,7 @@ Quyết định người thiết kế agent, 25/11/2026: pilot hồ sơ thật, 
 |---|---|---|
 | Skill `seller-onboarding` | Điều phối theo bước (AI hỗ trợ bước 1, 3–9, 11, 12; bước 2, 10 người làm), kho tri thức, giới hạn | `plugin/skills/`, `project/claude-project-instructions.md`, `project/kb/` |
 | Sáu skill nghiệp vụ | Một việc mỗi skill | `skills/` |
+| Hai skill bản nháp (từ 0.5.0) | `seller-cms-entry` (chờ D-07a/b), `seller-contract-draft` (chờ D-08b); tự dừng khi bị gọi | `skills/` |
 | Agent `output-checker` | Soát nguồn, lời hứa, định dạng | `plugin/agents/` |
 | Hooks | Chặn mật khẩu/OTP/token trong tin nhập; chặn công cụ ghi và trình duyệt; bắt sửa đầu ra thiếu contract hoặc lặp số CCCD/tài khoản | `plugin/hooks/` |
 

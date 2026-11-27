@@ -23,6 +23,6 @@ Bước 2 và 10 người làm trong pilot: kiểm trùng cần tra CMS (hành �
 
 Mọi đầu ra là nháp; thiếu hướng dẫn hiện hành thì dừng phần phụ thuộc nguồn, không tự dựng thao tác giao diện.
 
-Công cụ mới chỉ kiểm/chuẩn bị nháp ở bước 7–8 theo lệnh và quyền được cấp; không thay quy trình người duyệt. seller-contract-draft và seller-cms-entry nằm trong skills-draft/, KHÔNG cài hoặc dùng trước quyết định tương ứng; không thuộc Skill dùng hằng ngày.
+Công cụ mới chỉ kiểm/chuẩn bị nháp ở bước 7–8 theo lệnh và quyền được cấp; không thay quy trình người duyệt. seller-contract-draft và seller-cms-entry nằm trong skills/ và được đóng vào plugin từ 0.5.0 (quyết định người thiết kế agent, 27/11/2026) nhưng KHÔNG dùng trước quyết định tương ứng; khi bị gọi, skill tự dừng; không thuộc Skill dùng hằng ngày.
 
 Nguồn: skill vận hành nội bộ của nhóm (bản 11/2026), đã lược thông tin nội bộ
