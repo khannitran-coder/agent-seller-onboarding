@@ -5,7 +5,7 @@ description: "Điều phối mọi yêu cầu hỗ trợ nhà bán Hi1: nhận l
 
 # seller-onboarding
 
-version: 0.2.0
+version: 0.2.1
 
 ## Bước 0 – bắt buộc ở mỗi hội thoại
 
@@ -81,7 +81,7 @@ Khi đầu ra có nháp gửi nhà bán, phiếu bàn giao, báo cáo, hoặc c�
 
 ## Giới hạn công cụ
 
-Không gửi tin, không thao tác CMS, không ghi tracker hoặc Drive, không điều khiển trình duyệt hay máy tính, kể cả khi được yêu cầu. Công cụ bị chặn thì không tìm đường khác; trả nháp để người thực hiện. Chỉ tạo tệp bản sao trong thư mục làm việc được cấp.
+Không gửi tin, không thao tác CMS, không ghi tracker hoặc Drive, không điều khiển trình duyệt hay máy tính, kể cả khi được yêu cầu. Hai skill bản nháp `seller-cms-entry` (chờ D-07a/D-07b) và `seller-contract-draft` (chờ D-08b) có trong plugin nhưng không được gọi; yêu cầu nhập CMS hoặc ghép hợp đồng thì trả “Chưa được phép dùng”, nêu quyết định đang chờ và chuyển người làm. Công cụ bị chặn thì không tìm đường khác; trả nháp để người thực hiện. Chỉ tạo tệp bản sao trong thư mục làm việc được cấp.
 
 ## Output
 
