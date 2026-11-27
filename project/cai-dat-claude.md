@@ -20,7 +20,7 @@ Quy tắc:
 - Chỉ làm các bước trong tài liệu. Không tự thêm connector, không đổi cài đặt tổ chức.
 - Hỏi tôi và chờ đồng ý trước khi: chia sẻ Project hoặc Skill, bật/tắt bất kỳ cài đặt nào, xoá hoặc ghi đè thứ đã có.
 - Không đăng nhập hay nhập mật khẩu thay tôi.
-- Chỉ tải lên đúng tệp được liệt kê. Không tải kb-workspace/, skills-draft/, tests/fixtures/, tools/, templates/ hay bất kỳ ảnh nào từ Google Drive.
+- Chỉ tải lên đúng tệp được liệt kê. Không tải kb-workspace/, skills/seller-cms-entry, skills/seller-contract-draft, tests/fixtures/, tools/, templates/ hay bất kỳ ảnh nào từ Google Drive.
 - Gặp lỗi hoặc giao diện khác tài liệu thì dừng, chụp lại và báo tôi; không báo thành công khi chưa kiểm.
 - Trước khi bắt đầu, liệt kê những gì sẽ tạo và chờ tôi xác nhận. Kết thúc bằng bảng ở mục 6.
 ```
@@ -29,7 +29,7 @@ Quy tắc:
 
 Menu: Customize > Skills > “+” > “+ Create skill” > “Upload a skill”.
 
-Tải lần lượt từ `dist/`: `seller-document-checklist.zip`, `seller-communication.zip`, `first-product-assistant.zip`, `daily-operations-report.zip`, `affiliate-price-review.zip`, `seller-media-tools.zip`. Nếu trình tải báo lỗi mô tả quá dài, dùng zip cùng tên trong `dist/short/` và ghi vào bảng kết quả. Bật cả sáu Skill. Không cài gì từ `skills-draft/`.
+Tải lần lượt từ `dist/`: `seller-document-checklist.zip`, `seller-communication.zip`, `first-product-assistant.zip`, `daily-operations-report.zip`, `affiliate-price-review.zip`, `seller-media-tools.zip`. Nếu trình tải báo lỗi mô tả quá dài, dùng zip cùng tên trong `dist/short/` và ghi vào bảng kết quả. Bật cả sáu Skill. Không cài `seller-cms-entry.zip` và `seller-contract-draft.zip` (bản nháp chờ D-07a/b, D-08b).
 
 Phiên bản phải thấy trong `SKILL.md`: checklist 0.1.5, communication 0.1.4, first-product 0.1.3, daily-report 0.2.2, affiliate 0.1.1, media 0.1.0.
 
