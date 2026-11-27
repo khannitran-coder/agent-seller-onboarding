@@ -78,8 +78,12 @@ class PackageTests(unittest.TestCase):
                            'skills/seller-onboarding/SKILL.md', 'skills/seller-onboarding/references/instructions.md',
                            'skills/seller-onboarding/references/trang-thai.md', 'skills/seller-onboarding/references/phieu-chuyen-cap.md']:
                 self.assertIn(needed, names)
-            self.assertEqual(sum(n.startswith('skills/') and n.endswith('/SKILL.md') for n in names), 7)
-            self.assertFalse(any('seller-cms-entry' in n or 'seller-contract-draft' in n for n in names))
+            self.assertEqual(sum(n.startswith('skills/') and n.endswith('/SKILL.md') for n in names), 9)
+            with zipfile.ZipFile(ROOT/'dist'/f'{name}-{version}.zip') as archive:
+                for draft in ['seller-cms-entry', 'seller-contract-draft']:
+                    text = archive.read(f'skills/{draft}/SKILL.md').decode('utf-8')
+                    self.assertIn('BẢN NHÁP', text, draft)
+                    self.assertIn('Dừng – skill chưa được phép dùng', text, draft)
             self.assertEqual('| DRAFT |' in catalog, variant == 'test')
 
 
